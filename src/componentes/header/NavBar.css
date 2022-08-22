@@ -98,3 +98,7 @@ img {
   height: 20px;
   margin-top: 10px;
 }
+
+.div-carrito {
+  display: inline-block;
+}

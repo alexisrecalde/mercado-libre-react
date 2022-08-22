@@ -1,6 +1,7 @@
 import logo from "../../assets/logo__large_plus.png";
 import nav from "../../assets/nav.jpg";
-import carrito from "../../assets/carrito-de-compras.png";
+import CartWidget from "./CartWidget";
+
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -43,8 +44,7 @@ const NavBar = () => {
           <a href="">Ingresa</a>
           <a href="">Mis compras</a>
           <a id="open-modal" href="">
-            <img className="nav-bot-menu-carrito" src={carrito} alt="" />
-            <span id="contador-carrito">0</span>
+            <CartWidget />
           </a>
         </nav>
       </div>
