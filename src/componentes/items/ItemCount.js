@@ -4,7 +4,7 @@ const ItemCount = ({ stock }) => {
   let [count, setCount] = useState(0);
 
   const sumar = () => {
-    if (count <= stock) {
+    if (count < stock) {
       setCount(count + 1);
       console.log(count);
     }
@@ -24,7 +24,7 @@ const ItemCount = ({ stock }) => {
     <div>
       <h3>Agregar al Carrito</h3>
       <button onClick={restar}>-</button>
-      <p>{count === stock ? <h4>superaste la cantidad maxima</h4> : count}</p>
+      <p>{count > stock ? <h4>superaste la cantidad maxima</h4> : count}</p>
       <button onClick={sumar}>+</button>
     </div>
   );

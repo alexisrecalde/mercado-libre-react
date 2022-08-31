@@ -36,16 +36,13 @@ const ItemListContainer = () => {
   return (
     <div>
       {productosarray.map((producto) => (
-        <>
-          <MultiActionAreaCard
-            key={producto.id}
-            nombre={producto.name}
-            descripcion={producto.description}
-            precio="$10000"
-            img={producto.images}
-          />
-          <ItemCount stock={5} />
-        </>
+        <MultiActionAreaCard
+          key={producto.id}
+          nombre={producto.name}
+          descripcion={producto.description}
+          precio="$10000"
+          img={producto.images}
+        />
       ))}
     </div>
   );

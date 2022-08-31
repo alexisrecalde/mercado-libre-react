@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import ItemCount from "./ItemCount";
 
 export default function MultiActionAreaCard({
   nombre,
@@ -28,6 +29,7 @@ export default function MultiActionAreaCard({
         <Button size="small" color="primary">
           Share
         </Button>
+        <ItemCount stock={5} />
       </CardActions>
     </Card>
   );
