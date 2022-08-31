@@ -1,8 +1,5 @@
-import logo from "../../assets/logo__large_plus.png";
-import nav from "../../assets/nav.jpg";
-import CartWidget from "./CartWidget";
-
 import "./NavBar.css";
+import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   return (
@@ -10,7 +7,11 @@ const NavBar = () => {
       <div className="nav-container header-nav">
         <div className="nav-logo">
           <a href="index.html">
-            <img className="nav-logo-img" src={logo} alt="" />
+            <img
+              className="nav-logo-img"
+              src="../../assets/logo__large_plus.png"
+              alt=""
+            />
           </a>
         </div>
         <form className="nav-search">
@@ -22,7 +23,7 @@ const NavBar = () => {
         </form>
         <div className="nav-banner">
           <a href="index.html">
-            <img className="nav-banner-img" src={nav} alt="" />
+            <img className="nav-banner-img" src="../../assets/nav.jpg" alt="" />
           </a>
         </div>
       </div>
