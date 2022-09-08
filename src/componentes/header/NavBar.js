@@ -1,18 +1,19 @@
 import "./NavBar.css";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <header className="header-container">
       <div className="nav-container header-nav">
         <div className="nav-logo">
-          <a href="index.html">
+          <Link to="/">
             <img
               className="nav-logo-img"
               src="../../assets/logo__large_plus.png"
               alt=""
             />
-          </a>
+          </Link>
         </div>
         <form className="nav-search">
           <input

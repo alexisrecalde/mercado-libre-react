@@ -22,7 +22,7 @@ const ItemCount = ({ stock }) => {
 
   return (
     <div>
-      <h3>Agregar al Carrito</h3>
+      <button>Agregar al Carrito</button>
       <button onClick={restar}>-</button>
       <p>{count > stock ? <h4>superaste la cantidad maxima</h4> : count}</p>
       <button onClick={sumar}>+</button>

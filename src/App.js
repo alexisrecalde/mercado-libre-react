@@ -1,16 +1,20 @@
 import "./App.css";
 import ItemListContainer from "./componentes/items/ItemListContainer";
 import NavBar from "./componentes/header/NavBar.js";
-import ItemCount from "./componentes/items/ItemCount";
-import MultiActionAreaCard from "./componentes/items/MultiActionAreaCard";
-import { ListItem } from "@mui/material";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import DetalleProducto from "./componentes/producto/DetalleProducto";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter className="App">
       <NavBar />
-      <ItemListContainer />
-    </div>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/producto/:productoID" element={<DetalleProducto />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

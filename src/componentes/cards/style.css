@@ -1,0 +1,28 @@
+.card-container {
+  max-width: 320px;
+  max-height: auto;
+}
+.productos-title {
+  font-size: 26px;
+  font-style: normal;
+  font-weight: lighter;
+  color: #666;
+  display: inline-block;
+}
+.card-img {
+  object-fit: cover;
+
+  margin: 0 auto;
+}
+.productos-subtitle {
+  text-decoration: none;
+  font-size: 14px;
+  color: #3483fa;
+  margin-left: 5px;
+  margin-bottom: 1px;
+}
+
+.product-text-description {
+  color: #666;
+  font-size: 14px;
+}

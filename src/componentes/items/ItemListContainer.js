@@ -1,21 +1,9 @@
-import MultiActionAreaCard from "./MultiActionAreaCard";
+import MultiActionAreaCard from "../cards/MultiActionAreaCard";
 import React, { useState, useEffect } from "react";
-import ItemCount from "./ItemCount";
+import { fetchOptions } from "../keys";
+import style from "./style.css";
 
 const ItemListContainer = () => {
-  const keys = {
-    public:
-      "pk_test_51Lb6M3Ax57dZOCglQxO1aYofdKcXw1BsbrkX5aRMrDEoGmFbEL6LhKuR6WyOtIx66PR98LGWjBUT8pqOAMvvqcNl00iFeSWjE1",
-    secret:
-      "sk_test_51Lb6M3Ax57dZOCglFiuFXrRLTrtcPj1lgVQVjdpNatCpfh0A62B7VdiGmje9YO6s2FStcVQbFMlMDbeejTiCUl3q004vTXfubK",
-  };
-
-  const fetchOptions = {
-    headers: {
-      Authorization: `Bearer ${keys.secret}`,
-    },
-  };
-
   let [productosarray, setProductosArray] = useState([]);
   let [preciosarray, setPreciosArray] = useState([]);
 
@@ -34,17 +22,13 @@ const ItemListContainer = () => {
   }, []);
   console.log(productosarray, preciosarray);
   return (
-    <div>
-      {productosarray.map((producto) => (
-        <MultiActionAreaCard
-          key={producto.id}
-          nombre={producto.name}
-          descripcion={producto.description}
-          precio="$10000"
-          img={producto.images}
-        />
-      ))}
-    </div>
+    productosarray && (
+      <div className="productos-card-container">
+        {productosarray.map((producto) => {
+          return <MultiActionAreaCard producto={producto} key={producto.id} />;
+        })}
+      </div>
+    )
   );
 };
 
