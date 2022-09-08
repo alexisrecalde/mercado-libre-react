@@ -1,0 +1,31 @@
+.payment-methods-title-container {
+  margin: auto 0px;
+}
+.payment-methods-item {
+  text-align: center;
+  background-color: #fff;
+  margin: 60px 0px;
+}
+
+.payment-methods-item {
+  display: flex;
+  padding: 5%;
+}
+.payment-methods-svg {
+  margin: auto 0;
+  margin-right: 5%;
+}
+.payment-methods-title,
+.payment-methods-subtitle {
+  text-align: start;
+  margin: 0px 0;
+  font-weight: 100;
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+.payment-methods-subtitle a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #3483fa;
+}

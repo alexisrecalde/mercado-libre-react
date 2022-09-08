@@ -10,9 +10,7 @@
   width: 400px;
   height: auto;
 }
-.detalle-producto {
-  padding-right: 150px;
-}
+
 .detalle-producto-titulo {
   text-align: start;
 }
@@ -50,7 +48,7 @@
   border-radius: 10px;
   text-align: center;
   align-items: center;
-  margin-right: 30px;
+  margin-right: 150px;
 }
 
 .btn-comprar {
