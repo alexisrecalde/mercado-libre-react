@@ -18,6 +18,16 @@ function App() {
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/producto/:productoID" element={<DetalleProducto />} />
       </Routes>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </BrowserRouter>
   );
 }

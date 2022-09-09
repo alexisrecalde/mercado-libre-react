@@ -37,7 +37,6 @@ export default function MultiActionAreaCard({ producto }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <ItemCount stock={5} />
     </Card>
   );
 }
