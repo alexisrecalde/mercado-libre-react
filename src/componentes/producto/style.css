@@ -2,11 +2,12 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-top: 100px;
+  padding: 20px;
+  background-color: #fff;
+  margin: 100px 5%;
 }
 
 .detalle-producto-img {
-  margin-left: 100px;
   width: 400px;
   height: auto;
 }
@@ -16,7 +17,6 @@
 }
 .star-img {
   text-align: start;
-
   height: 30px;
   width: 150px;
   cursor: pointer;
@@ -48,7 +48,7 @@
   border-radius: 10px;
   text-align: center;
   align-items: center;
-  margin-right: 150px;
+  margin-right: 50px;
 }
 
 .btn-comprar {
