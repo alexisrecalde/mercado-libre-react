@@ -1,0 +1,16 @@
+.promocion-container {
+  text-align: start;
+  position: absolute;
+  top: 0px;
+}
+.promocion {
+  background-color: #3483fa;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 2px 4px;
+}

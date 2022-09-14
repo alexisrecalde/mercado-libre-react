@@ -2,12 +2,17 @@
   max-width: 320px;
   max-height: 325px;
 }
+.card-content {
+  min-height: 110px;
+  position: relative;
+}
 .productos-title {
   font-size: 26px;
   font-style: normal;
   font-weight: lighter;
   color: #666;
   display: inline-block;
+  text-align: start;
 }
 .card-img {
   object-fit: cover;
@@ -20,9 +25,16 @@
   color: #3483fa;
   margin-left: 5px;
   margin-bottom: 1px;
+  text-align: start;
 }
 
 .product-text-description {
   color: #666;
   font-size: 14px;
+  text-align: start;
+}
+
+.card-container-ofertas {
+  max-width: 320px;
+  max-height: 500px;
 }

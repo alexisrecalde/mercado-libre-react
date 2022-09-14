@@ -7,6 +7,7 @@ import { CardActionArea } from "@mui/material";
 
 import style from "./style.css";
 import { useNavigate } from "react-router-dom";
+import OfertaDelDia from "./elementos/oferta/OfertaDelDia";
 
 export default function MultiActionAreaCard({ producto }) {
   let navigate = useNavigate();
@@ -15,11 +16,15 @@ export default function MultiActionAreaCard({ producto }) {
     navigate(`/producto/${producto.id}`);
   };
   return (
-    <Card className="card-container" sx={{ maxWidth: 300 }}>
+    <Card
+      className="card-container card-container-ofertas"
+      sx={{ maxWidth: 300 }}
+    >
       <CardActionArea onClick={handleNavegation}>
         <CardMedia component="img" height="50" image={producto.images[0]} />
         <hr />
-        <CardContent>
+        <CardContent className="card-content">
+          {producto.metadata.oferta && <OfertaDelDia />}
           <Typography
             className="productos-title"
             gutterBottom

@@ -31,8 +31,8 @@ export default function SliderMain() {
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
-        {banners.map((e) => (
-          <SwiperSlide>
+        {banners.map((e, index) => (
+          <SwiperSlide key={index}>
             <img src={e} alt="banner" />
           </SwiperSlide>
         ))}

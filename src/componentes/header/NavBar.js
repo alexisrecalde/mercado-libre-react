@@ -35,7 +35,7 @@ const NavBar = () => {
         </a>
         <div className="nav-bot-item">
           <a href="">Categorias</a>
-          <a href="">Ofertas</a>
+          <Link to="/ofertas">Ofertas</Link>
           <a href="">Historial</a>
 
           <a href="">Vender</a>

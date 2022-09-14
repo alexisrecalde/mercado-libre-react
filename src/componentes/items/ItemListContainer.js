@@ -20,7 +20,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     Promise.all([
-      fetch("https://api.stripe.com/v1/products", fetchOptions),
+      fetch("https://api.stripe.com/v1/products?limit=100", fetchOptions),
       fetch("https://api.stripe.com/v1/prices", fetchOptions),
     ])
       .then((responses) => {
@@ -47,8 +47,8 @@ const ItemListContainer = () => {
       >
         {productosarray.map((producto) => {
           return (
-            <SwiperSlide>
-              <MultiActionAreaCard producto={producto} key={producto.id} />
+            <SwiperSlide key={producto.id}>
+              <MultiActionAreaCard producto={producto} />
             </SwiperSlide>
           );
         })}
