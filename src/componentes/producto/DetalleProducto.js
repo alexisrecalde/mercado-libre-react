@@ -3,10 +3,19 @@ import { useEffect, useState } from "react";
 import { fetchOptions } from "../keys";
 import style from "./style.css";
 import { useParams } from "react-router-dom";
+import Counter from "../counter/Counter";
 
 const DetalleProducto = () => {
   let { productoID } = useParams();
   const [detalleProducto, setdetalleProducto] = useState(null);
+  const [cantidad, setCantidad] = useState(1);
+
+  const agregarACarrito = () => {
+    console.log({
+      ...detalleProducto,
+      cantidad,
+    });
+  };
 
   useEffect(() => {
     fetch(`https://api.stripe.com/v1/products/${productoID}`, fetchOptions)
@@ -105,11 +114,7 @@ const DetalleProducto = () => {
             {detalleProducto.description}
           </p>
         </div>
-        <div className="detalle-producto-chekout">
-          <p>Stock Disponible</p>
-          <button className="btn-comprar">Comprar Ahora</button>
-          <button className="btn-carrito">Agregar Al carrito</button>
-        </div>
+        <Counter stock={6} count={cantidad} setCount={setCantidad} />
       </div>
     )
   );

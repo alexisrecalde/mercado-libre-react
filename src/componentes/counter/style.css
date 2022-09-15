@@ -1,0 +1,74 @@
+.detalle-producto-chekout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 325px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  margin-right: 50px;
+}
+.counter-container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 250px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+.btn {
+  cursor: pointer;
+  width: 80%;
+  font-size: 24px;
+  width: 14px;
+  color: #3483fa;
+  line-height: 1;
+  text-align: center;
+  border: 0px;
+  background-color: #fff;
+}
+
+.btn-restar {
+  font-size: 28px;
+}
+
+.btn-comprar {
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #3483fa;
+  border-color: transparent;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-carrito {
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgba(65, 137, 230, 0.15);
+  border-color: transparent;
+  color: #3483fa;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btn-comprar:hover {
+  background-color: #2563bf;
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-carrito:hover {
+  background-color: rgba(28, 92, 176, 0.15);
+  border-color: transparent;
+  color: #3483fa;
+}
