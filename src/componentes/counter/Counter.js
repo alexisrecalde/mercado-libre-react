@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Style from "./style.css";
 
-const Counter = ({ stock, count, setCount }) => {
+const Counter = ({ stock, count, setCount, agregarACarrito }) => {
   const sumar = () => {
     if (count < stock) {
       setCount(count + 1);
@@ -35,7 +35,9 @@ const Counter = ({ stock, count, setCount }) => {
       </div>
       <div className="btn-container">
         <button className="btn-comprar">Comprar Ahora</button>
-        <button className="btn-carrito">Agregar Al carrito</button>
+        <button onClick={agregarACarrito} className="btn-carrito">
+          Agregar Al carrito
+        </button>
       </div>
     </div>
   );

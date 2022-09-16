@@ -11,10 +11,15 @@ const DetalleProducto = () => {
   const [cantidad, setCantidad] = useState(1);
 
   const agregarACarrito = () => {
-    console.log({
-      ...detalleProducto,
+    const carrito = {
+      id: detalleProducto.id,
+      description: detalleProducto.description,
+      name: detalleProducto.name,
+      images: detalleProducto.images[0],
       cantidad,
-    });
+    };
+
+    console.log(carrito);
   };
 
   useEffect(() => {
@@ -114,7 +119,12 @@ const DetalleProducto = () => {
             {detalleProducto.description}
           </p>
         </div>
-        <Counter stock={6} count={cantidad} setCount={setCantidad} />
+        <Counter
+          stock={6}
+          count={cantidad}
+          setCount={setCantidad}
+          agregarACarrito={agregarACarrito}
+        />
       </div>
     )
   );
