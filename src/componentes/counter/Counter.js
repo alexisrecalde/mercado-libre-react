@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
-import Style from "./style.css";
+import React, { useEffect } from "react";
+import "./style.css";
 
 const Counter = ({ stock, count, setCount, agregarACarrito }) => {
   const sumar = () => {
     if (count < stock) {
       setCount(count + 1);
-      console.log(count);
     }
   };
 
   const restar = () => {
     if (count > 0) {
       setCount(count - 1);
-      console.log(count);
     }
   };
-  useEffect(() => {
-    console.log(count);
-  }, [count]);
+  useEffect(() => {}, [count]);
 
   return (
     <div className=" detalle-producto-chekout">

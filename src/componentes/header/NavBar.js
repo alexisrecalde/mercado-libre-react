@@ -46,7 +46,9 @@ const NavBar = () => {
           <a href="">Ingresa</a>
           <a href="">Mis compras</a>
           <a id="open-modal" href="">
-            <CartWidget />
+            <Link to="/carrito">
+              <CartWidget />
+            </Link>
           </a>
         </nav>
       </div>

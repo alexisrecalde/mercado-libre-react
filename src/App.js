@@ -1,37 +1,52 @@
 import "./App.css";
-import ItemListContainer from "./componentes/items/ItemListContainer";
+import { useState } from "react";
 import NavBar from "./componentes/header/NavBar.js";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import DetalleProducto from "./componentes/producto/DetalleProducto";
-import SliderMain from "./componentes/slider/SliderMain";
-import MetodosDePagoContainer from "./componentes/main/metodos de pago/MetodosDePagoContainer";
 import Home from "./componentes/pages/home/Home";
 import OfertasContainer from "./componentes/pages/ofertas/OfertasContainer";
+import { CartContext } from "./context/CartContext";
+import Carrito from "./componentes/pages/carrito/Carrito";
 
 function App() {
-  return (
-    <BrowserRouter className="App">
-      <NavBar />
+  const [cart, setCart] = useState([]);
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/producto/:productoID" element={<DetalleProducto />} />
-        <Route path="/ofertas" element={<OfertasContainer />} />
-        <Route path="/ofertas/:categoriaId" element={<OfertasContainer />} />
-      </Routes>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-    </BrowserRouter>
+  const actualizarEstadoCarrito = (item) => {
+    setCart([...cart, item]);
+    console.log(cart.cantidad);
+  };
+
+  const productoEnCarrito = (id) => {
+    return cart.some((producto) => producto.id === id);
+  };
+
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        actualizarEstadoCarrito,
+        productoEnCarrito,
+        setCart,
+      }}
+    >
+      <BrowserRouter className="App">
+        <NavBar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/producto/:productoID" element={<DetalleProducto />} />
+          <Route path="/ofertas" element={<OfertasContainer />} />
+          <Route path="/ofertas/:categoriaId" element={<OfertasContainer />} />
+          <Route path="/carrito" element={<Carrito />} />
+        </Routes>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </BrowserRouter>
+    </CartContext.Provider>
   );
 }
 

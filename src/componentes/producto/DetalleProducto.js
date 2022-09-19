@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import { fetchOptions } from "../keys";
 import style from "./style.css";
 import { useParams } from "react-router-dom";
 import Counter from "../counter/Counter";
+import { CartContext } from "../../context/CartContext";
 
 const DetalleProducto = () => {
+  const { cart, actualizarEstadoCarrito, productoEnCarrito, setCart } =
+    useContext(CartContext);
+  console.log(cart);
+
   let { productoID } = useParams();
   const [detalleProducto, setdetalleProducto] = useState(null);
   const [cantidad, setCantidad] = useState(1);
+  let stock = 10;
 
   const agregarACarrito = () => {
-    const carrito = {
+    const itemCarrito = {
       id: detalleProducto.id,
       description: detalleProducto.description,
       name: detalleProducto.name,
       images: detalleProducto.images[0],
       cantidad,
+      stock,
     };
-
-    console.log(carrito);
+    //si el elemento no existe, pushea el item
+    if (!productoEnCarrito(itemCarrito.id)) {
+      actualizarEstadoCarrito(itemCarrito);
+    } else {
+      //si existe, aumenta la cantidad
+      cart.forEach((el) => {
+        if (el.id === itemCarrito.id) {
+          el.cantidad += itemCarrito.cantidad;
+        }
+      });
+    }
   };
 
   useEffect(() => {
@@ -120,7 +136,7 @@ const DetalleProducto = () => {
           </p>
         </div>
         <Counter
-          stock={6}
+          stock={stock}
           count={cantidad}
           setCount={setCantidad}
           agregarACarrito={agregarACarrito}

@@ -1,0 +1,32 @@
+.carrito-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 50px 50px;
+  padding: 30px 50px;
+}
+
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.carrito-img {
+  width: 50px;
+  height: 50px;
+}
+
+.carrito-name {
+  margin-right: 200px;
+}
+
+.carrito-envio {
+  font-size: 14px;
+  font-weight: 100;
+  color: #00a650;
+}
+
+.carrito-precio {
+}
