@@ -6,30 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetalleProducto from "./componentes/producto/DetalleProducto";
 import Home from "./componentes/pages/home/Home";
 import OfertasContainer from "./componentes/pages/ofertas/OfertasContainer";
-import { CartContext } from "./context/CartContext";
+import { CarritoContextProvide } from "./context/CarritoContext";
 import Carrito from "./componentes/pages/carrito/Carrito";
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  const actualizarEstadoCarrito = (item) => {
-    setCart([...cart, item]);
-    console.log(cart.cantidad);
-  };
-
-  const productoEnCarrito = (id) => {
-    return cart.some((producto) => producto.id === id);
-  };
-
   return (
-    <CartContext.Provider
-      value={{
-        cart,
-        actualizarEstadoCarrito,
-        productoEnCarrito,
-        setCart,
-      }}
-    >
+    <CarritoContextProvide>
       <BrowserRouter className="App">
         <NavBar />
 
@@ -46,7 +28,7 @@ function App() {
         <br />
         <br />
       </BrowserRouter>
-    </CartContext.Provider>
+    </CarritoContextProvide>
   );
 }
 

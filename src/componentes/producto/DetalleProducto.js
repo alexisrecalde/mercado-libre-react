@@ -4,7 +4,7 @@ import { fetchOptions } from "../keys";
 import style from "./style.css";
 import { useParams } from "react-router-dom";
 import Counter from "../counter/Counter";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../context/CarritoContext";
 
 const DetalleProducto = () => {
   const { cart, actualizarEstadoCarrito, productoEnCarrito, setCart } =
