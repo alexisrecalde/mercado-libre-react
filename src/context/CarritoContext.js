@@ -8,7 +8,6 @@ export const CarritoContextProvide = ({ children }) => {
 
   const actualizarEstadoCarrito = (item) => {
     setCart([...cart, item]);
-    console.log(cart.cantidad);
   };
 
   const productoEnCarrito = (id) => {
@@ -30,6 +29,14 @@ export const CarritoContextProvide = ({ children }) => {
     return total;
   };
 
+  const eliminarProducto = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
+  const vaciarCarrito = () => {
+    return setCart([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -39,6 +46,8 @@ export const CarritoContextProvide = ({ children }) => {
         setCart,
         carritoCantidad,
         carritoTotal,
+        vaciarCarrito,
+        eliminarProducto,
       }}
     >
       {children}

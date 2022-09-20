@@ -19,17 +19,17 @@ const Counter = ({ stock, count, setCount, agregarACarrito }) => {
     <div className=" detalle-producto-chekout">
       <p>Stock Disponible</p>
       <div className="counter-container">
-        <button className="btn btn-restar" onClick={restar}>
+        <button className="btnCounter btn-restar" onClick={restar}>
           -
         </button>
 
         <p>{count > stock ? <h4>superaste la cantidad maxima</h4> : count}</p>
 
-        <button className="btn " onClick={sumar}>
+        <button className="btnCounter  btn-sumar " onClick={sumar}>
           +
         </button>
       </div>
-      <div className="btn-container">
+      <div className="btn-container-counter">
         <button className="btn-comprar">Comprar Ahora</button>
         <button onClick={agregarACarrito} className="btn-carrito">
           Agregar Al carrito

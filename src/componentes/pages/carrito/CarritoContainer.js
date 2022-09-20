@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../../context/CarritoContext";
+import BtnCarrito from "./BtnCarrito";
 import CarritoItem from "./CarritoItem";
 import CarritoTotal from "./CarritoTotal";
-import "./style.css";
+import "./styleCarrito.css";
 
 const CarritoContainer = () => {
   const { cart } = useContext(CartContext);
@@ -14,6 +15,7 @@ const CarritoContainer = () => {
         <CarritoItem key={item.id} item={item} />
       ))}
       <CarritoTotal />
+      <BtnCarrito />
     </div>
   );
 };

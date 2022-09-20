@@ -9,7 +9,7 @@
   align-items: center;
   margin-right: 50px;
 }
-.counter-container {
+.counter-container-counter {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
@@ -20,8 +20,14 @@
   margin-top: 15px;
   border-radius: 10px;
 }
-.btn {
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.btnCounter {
   cursor: pointer;
+
   width: 80%;
   font-size: 24px;
   width: 14px;
@@ -33,7 +39,11 @@
 }
 
 .btn-restar {
-  font-size: 28px;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.btn-sumar {
+  margin-left: 12px;
 }
 
 .btn-comprar {
