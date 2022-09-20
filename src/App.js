@@ -7,7 +7,7 @@ import DetalleProducto from "./componentes/producto/DetalleProducto";
 import Home from "./componentes/pages/home/Home";
 import OfertasContainer from "./componentes/pages/ofertas/OfertasContainer";
 import { CarritoContextProvide } from "./context/CarritoContext";
-import Carrito from "./componentes/pages/carrito/Carrito";
+import Carrito from "./componentes/pages/carrito/CarritoContainer";
 
 function App() {
   return (

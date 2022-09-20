@@ -19,7 +19,12 @@
 }
 
 .carrito-name {
-  margin-right: 200px;
+  width: 300px;
+  margin: auto 0;
+}
+
+.carrito-name h3 {
+  text-align: start;
 }
 
 .carrito-envio {
@@ -29,4 +34,8 @@
 }
 
 .carrito-precio {
+}
+
+.carrito-total {
+  text-align: end;
 }

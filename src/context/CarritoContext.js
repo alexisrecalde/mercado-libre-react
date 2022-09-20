@@ -1,4 +1,4 @@
-import { Children, createContext, useState } from "react";
+import { createContext, useState } from "react";
 import React from "react";
 
 export const CartContext = createContext();
@@ -16,11 +16,19 @@ export const CarritoContextProvide = ({ children }) => {
   };
 
   const carritoCantidad = () => {
-    console.log(cart.length);
     return cart.length;
   };
 
-  carritoCantidad();
+  const carritoTotal = () => {
+    let total = 0;
+    let cantidad = 0;
+
+    cart.forEach((e) => {
+      cantidad += e.cantidad;
+    });
+    total = cantidad * 10000;
+    return total;
+  };
 
   return (
     <CartContext.Provider
@@ -30,6 +38,7 @@ export const CarritoContextProvide = ({ children }) => {
         productoEnCarrito,
         setCart,
         carritoCantidad,
+        carritoTotal,
       }}
     >
       {children}

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../../context/CarritoContext";
 import CarritoItem from "./CarritoItem";
+import CarritoTotal from "./CarritoTotal";
 import "./style.css";
 
-const Carrito = () => {
+const CarritoContainer = () => {
   const { cart } = useContext(CartContext);
   return (
     <div className="carrito-container">
@@ -12,8 +13,9 @@ const Carrito = () => {
       {cart.map((item) => (
         <CarritoItem key={item.id} item={item} />
       ))}
+      <CarritoTotal />
     </div>
   );
 };
 
-export default Carrito;
+export default CarritoContainer;
