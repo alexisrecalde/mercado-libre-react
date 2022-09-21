@@ -1,7 +1,10 @@
 import MultiActionAreaCard from "../cards/MultiActionAreaCard";
 import React, { useState, useEffect } from "react";
 import { fetchOptions } from "../keys";
-import style from "./style.css";
+import "./style.css";
+import { collection, getDocs } from "firebase/firestore/lite";
+import { db } from "../../firebase/config";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,22 +19,26 @@ import { Pagination, Navigation } from "swiper";
 
 const ItemListContainer = () => {
   let [productosarray, setProductosArray] = useState([]);
-  let [preciosarray, setPreciosArray] = useState([]);
 
   useEffect(() => {
-    Promise.all([
-      fetch("https://api.stripe.com/v1/products?limit=100", fetchOptions),
-      fetch("https://api.stripe.com/v1/prices", fetchOptions),
-    ])
-      .then((responses) => {
-        return Promise.all(responses.map((resp) => resp.json()));
-      })
-      .then((json) => {
-        setProductosArray(json[0].data);
-        setPreciosArray(json[1].data);
-      });
+    const referenciaProductos = collection(db, "productos");
+    getDocs(referenciaProductos).then((resp) => {
+      productosarray = resp.docs.map((el) => el.data());
+      setProductosArray(productosarray);
+    });
+
+    //  Promise.all([
+    //    fetch("https://api.stripe.com/v1/products?limit=100", fetchOptions),
+    //    fetch("https://api.stripe.com/v1/prices", fetchOptions),
+    //  ])
+    //    .then((responses) => {
+    //      return Promise.all(responses.map((resp) => resp.json()));
+    //    })
+    //    .then((json) => {
+    //      setProductosArray(json[0].data);
+    //    });
   }, []);
-  console.log(productosarray, preciosarray);
+  console.log(productosarray);
 
   return (
     <div className="productos-card-container">
