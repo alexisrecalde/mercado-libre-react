@@ -2,7 +2,7 @@ import MultiActionAreaCard from "../cards/MultiActionAreaCard";
 import React, { useState, useEffect } from "react";
 import { fetchOptions } from "../keys";
 import "./style.css";
-import { collection, getDocs } from "firebase/firestore/lite";
+import { collection, getDocs, query, where } from "firebase/firestore/lite";
 import { db } from "../../firebase/config";
 
 // Import Swiper React components
@@ -16,15 +16,25 @@ import "./styles.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   let [productosarray, setProductosArray] = useState([]);
+  const { categoriaId } = useParams();
 
   useEffect(() => {
     const referenciaProductos = collection(db, "productos");
-    getDocs(referenciaProductos).then((resp) => {
+    const q = categoriaId
+      ? query(
+          referenciaProductos,
+          where("metadata.categoria", "==", categoriaId)
+        )
+      : referenciaProductos;
+
+    getDocs(q).then((resp) => {
       productosarray = resp.docs.map((el) => el.data());
       setProductosArray(productosarray);
+      console.log(resp);
     });
 
     //  Promise.all([
