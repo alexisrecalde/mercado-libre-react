@@ -1,5 +1,6 @@
 import MultiActionAreaCard from "../../../cards/MultiActionAreaCard";
-import style from "./style.css";
+
+import "./style.css";
 
 // Import Swiper React components
 

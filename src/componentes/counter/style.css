@@ -82,3 +82,8 @@
   border-color: transparent;
   color: #3483fa;
 }
+
+.btn-disable {
+  pointer-events: none;
+  opacity: 0.5;
+}

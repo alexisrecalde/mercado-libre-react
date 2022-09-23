@@ -4,6 +4,7 @@ import { fetchOptions } from "../keys";
 import "./style.css";
 import { collection, getDocs, query, where } from "firebase/firestore/lite";
 import { db } from "../../firebase/config";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,10 +21,14 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   let [productosarray, setProductosArray] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const { categoriaId } = useParams();
 
   useEffect(() => {
     const referenciaProductos = collection(db, "productos");
+    setLoading(true);
+
     const q = categoriaId
       ? query(
           referenciaProductos,
@@ -31,11 +36,14 @@ const ItemListContainer = () => {
         )
       : referenciaProductos;
 
-    getDocs(q).then((resp) => {
-      productosarray = resp.docs.map((el) => el.data());
-      setProductosArray(productosarray);
-      console.log(resp);
-    });
+    getDocs(q)
+      .then((resp) => {
+        productosarray = resp.docs.map((el) => el.data());
+        setProductosArray(productosarray);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
     //  Promise.all([
     //    fetch("https://api.stripe.com/v1/products?limit=100", fetchOptions),
@@ -62,13 +70,17 @@ const ItemListContainer = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper "
       >
-        {productosarray.map((producto) => {
-          return (
-            <SwiperSlide key={producto.id}>
-              <MultiActionAreaCard producto={producto} />
-            </SwiperSlide>
-          );
-        })}
+        {loading ? (
+          <PropagateLoader color="#000000" speedMultiplier={1} />
+        ) : (
+          productosarray.map((producto) => {
+            return (
+              <SwiperSlide key={producto.id}>
+                <MultiActionAreaCard producto={producto} />
+              </SwiperSlide>
+            );
+          })
+        )}
       </Swiper>
     </div>
   );

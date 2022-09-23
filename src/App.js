@@ -7,7 +7,7 @@ import DetalleProducto from "./componentes/producto/DetalleProducto";
 import Home from "./componentes/pages/home/Home";
 import OfertasContainer from "./componentes/pages/ofertas/OfertasContainer";
 import { CarritoContextProvide } from "./context/CarritoContext";
-import Carrito from "./componentes/pages/carrito/CarritoContainer";
+import CarritoContainer from "./componentes/pages/carrito/CarritoContainer";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path="/producto/:productoID" element={<DetalleProducto />} />
           <Route path="/ofertas" element={<OfertasContainer />} />
           <Route path="/ofertas/:categoriaId" element={<OfertasContainer />} />
-          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/carrito" element={<CarritoContainer />} />
         </Routes>
         <br />
         <br />

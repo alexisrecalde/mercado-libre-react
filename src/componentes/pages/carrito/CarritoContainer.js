@@ -3,19 +3,30 @@ import { CartContext } from "../../../context/CarritoContext";
 import BtnCarrito from "./BtnCarrito";
 import CarritoItem from "./CarritoItem";
 import CarritoTotal from "./CarritoTotal";
+import CarritoVacio from "./CarritoVacio";
 import "./styleCarrito.css";
 
 const CarritoContainer = () => {
   const { cart } = useContext(CartContext);
   return (
     <div className="carrito-container">
-      <h2>Carrito ({cart.length})</h2>
-      <hr />
-      {cart.map((item) => (
-        <CarritoItem key={item.id} item={item} />
-      ))}
-      <CarritoTotal />
-      <BtnCarrito />
+      {cart.length === 0 ? (
+        <>
+          <h2>Carrito ({cart.length})</h2>
+
+          <CarritoVacio />
+        </>
+      ) : (
+        <>
+          <h2>Carrito ({cart.length})</h2>
+
+          {cart.map((item) => (
+            <CarritoItem key={item.id} item={item} />
+          ))}
+          <CarritoTotal />
+          <BtnCarrito />
+        </>
+      )}
     </div>
   );
 };

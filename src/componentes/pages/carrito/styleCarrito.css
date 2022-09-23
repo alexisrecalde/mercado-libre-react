@@ -95,3 +95,16 @@
   border-color: transparent;
   color: #3483fa;
 }
+
+/*****************************CARRITO VACIO**********************/
+.carrito-vacio {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.carrito-vacio h2,
+.carrito-vacio h3 {
+  color: #666;
+}
