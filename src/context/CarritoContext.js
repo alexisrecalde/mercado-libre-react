@@ -38,6 +38,9 @@ export const CarritoContextProvide = ({ children }) => {
     return setCart([]);
   };
 
+  const terminarCompra = () => {
+    setCart([]);
+  };
   useEffect(() => {
     localStorage.setItem("carrito", JSON.stringify(cart));
   }, [cart]);
@@ -53,6 +56,7 @@ export const CarritoContextProvide = ({ children }) => {
         carritoTotal,
         vaciarCarrito,
         eliminarProducto,
+        terminarCompra,
       }}
     >
       {children}

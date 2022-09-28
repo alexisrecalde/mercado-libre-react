@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const Counter = ({ stock, count, setCount, agregarACarrito }) => {
@@ -40,7 +41,9 @@ const Counter = ({ stock, count, setCount, agregarACarrito }) => {
         </button>
       </div>
       <div className="btn-container-counter">
-        <button className="btn-comprar">Comprar Ahora</button>
+        <Link to="/checkout">
+          <button className="btn-comprar">Comprar Ahora</button>
+        </Link>
         <button
           onClick={agregarACarrito}
           className={`btn-carrito ${

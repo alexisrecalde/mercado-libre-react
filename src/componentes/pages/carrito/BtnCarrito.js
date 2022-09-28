@@ -12,7 +12,9 @@ const BtnCarrito = () => {
       <Link to="/ofertas">
         <button className="btn-carritoPage">Seguir Comprando</button>
       </Link>
-      <button className="btn-carritoPage">Terminar Compra</button>
+      <Link to="/checkout">
+        <button className="btn-carritoPage">Terminar Compra</button>
+      </Link>
     </div>
   );
 };
